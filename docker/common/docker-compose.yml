@@ -1,11 +1,11 @@
 eurekaserver:
-   image:   cjdgithub/tmx-eurekasvr:${BUILD_NAME}
+   image:   cjddockerhub/tmx-eurekasvr:${BUILD_NAME}
    mem_limit: 1073741824
    ports:
        - "8761:8761"
 
 configserver:
-    image: cjdgithub/tmx-confsvr:${BUILD_NAME}
+    image: cjddockerhub/tmx-confsvr:${BUILD_NAME}
     #mem_limit: 1073741824
     mem_limit: 1000000000
     ports:
@@ -17,7 +17,7 @@ configserver:
        ENCRYPT_KEY:       "IMSYMMETRIC"
 
 zuulserver:
-    image: cjdgithub/tmx-zuulsvr:${BUILD_NAME}
+    image: cjddockerhub/tmx-zuulsvr:${BUILD_NAME}
     mem_limit: 1073741824
     ports:
       - "5555:5555"
@@ -31,7 +31,7 @@ zuulserver:
       EUREKASERVER_URI: "http://eurekaserver:8761/eureka/"
 
 licensingservice:
-    image: cjdgithub/tmx-licensing-service:${BUILD_NAME}
+    image: cjddockerhub/tmx-licensing-service:${BUILD_NAME}
     mem_limit: 1073741824
     ports:
       - "8080:8080"
@@ -52,7 +52,7 @@ licensingservice:
       ENCRYPT_KEY:       "IMSYMMETRIC"
 
 authenticationservice:
-    image: cjdgithub/tmx-authentication-service:${BUILD_NAME}
+    image: cjddockerhub/tmx-authentication-service:${BUILD_NAME}
     mem_limit: 1073741824
     ports:
       - "8901:8901"
@@ -68,7 +68,7 @@ authenticationservice:
       ENCRYPT_KEY:       "IMSYMMETRIC"
 
 organizationservice:
-    image: cjdgithub/tmx-organization-service:${BUILD_NAME}
+    image: cjddockerhub/tmx-organization-service:${BUILD_NAME}
     mem_limit: 1073741824
     ports:
       - "8085:8085"
